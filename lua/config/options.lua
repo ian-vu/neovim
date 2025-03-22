@@ -5,7 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Use Nerd Font
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- Line numbers to be relative
 vim.opt.relativenumber = true
@@ -59,3 +59,6 @@ vim.opt.scrolloff = 10
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Global statusline
+vim.opt.laststatus = 3

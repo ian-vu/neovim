@@ -13,24 +13,12 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- Initialise lazy and plugins
-require('lazy').setup({
+require('lazy').setup {
   -- Based on the module path it will import `lua/<path>/*.lua`
   -- NOTE: it won't recusively import nested modules
   { import = 'plugins' },
   { import = 'plugins.languages' },
-
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-}, {
+  change_detection = { enabled = false }, -- automatically detect changes in your configuration
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -50,4 +38,4 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
+}
