@@ -1,0 +1,45 @@
+return {
+  {
+    'sainnhe/gruvbox-material',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      -- vim.cmd("set background=light")
+      -- vim.cmd("set background=dark")
+      vim.cmd "let g:gruvbox_material_background = 'hard'" -- soft | medium | hard
+      vim.cmd "let g:gruvbox_material_foreground = 'mix'" -- material | mix | original
+      -- vim.cmd("let g:gruvbox_material_transparent_background = 2")
+      -- vim.cmd("let g:gruvbox_material_better_performance = 1")
+      vim.cmd 'let g:gruvbox_material_enable_bold = 0'
+      vim.cmd 'let g:gruvbox_material_enable_italic = 1'
+      -- vim.cmd("let g:gruvbox_material_dim_inactive_windows = 1")
+      -- vim.cmd("let g:gruvbox_material_visual = 'blue background'")
+      vim.cmd 'let g:gruvbox_material_spell_foreground = 1'
+      -- vim.cmd("let g:gruvbox_material_diagnostic_text_highlight = 1")
+      vim.cmd "let g:gruvbox_material_diagnostic_virtual_text = 'colored'" -- 'highlighted' for extra
+      -- How to highlight the current cursor word
+      vim.cmd "let g:gruvbox_material_current_word = 'grey background'" -- 'underline' or 'grey background'
+      vim.cmd 'colorscheme gruvbox-material'
+    end,
+    opts = {
+      inverse = true,
+    },
+  },
+  {
+    'folke/tokyonight.nvim',
+    enabled = false,
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require('tokyonight').setup {
+        styles = {
+          comments = { italic = false }, -- Disable italics in comments
+        },
+      }
+
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
+}
