@@ -44,7 +44,7 @@ return {
       {
         '<leader>fw',
         function()
-          Snacks.picker.grep()
+          Snacks.picker.grep { hidden = true }
         end,
         desc = 'Grep',
       },
@@ -59,7 +59,7 @@ return {
       {
         '<leader>ff',
         function()
-          Snacks.picker.files()
+          Snacks.picker.files { hidden = true }
         end,
         desc = 'Find Files',
       },
@@ -505,11 +505,18 @@ return {
       gitbrowse = { enabled = true }, -- used to open file in github
       indent = { -- Pretty indent lines
         enabled = true,
+        indent = {
+          char = '┊',
+        },
         animate = {
           enabled = false,
         },
-        chunk = {
+        scope = {
+          hl = 'Comment',
+        },
+        chunk = { -- Code chunk. e.g Functions
           enabled = true,
+          hl = 'Comment',
           char = {
             corner_top = '╭',
             corner_bottom = '╰',
@@ -531,6 +538,9 @@ return {
         enabled = true,
         matcher = {
           history_bonus = true,
+        },
+        layout = {
+          height = 0.9,
         },
         formatters = {
           file = {

@@ -1,4 +1,5 @@
 require 'config'
+local utils = require 'utils'
 
 -- Install `lazy.nvim` plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -11,6 +12,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
+
+utils.plugin.setup()
 
 -- Initialise lazy and plugins
 require('lazy').setup {

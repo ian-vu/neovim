@@ -25,6 +25,7 @@ vim.keymap.set({ 'n', 'v', 'x', 'o' }, 'L', 'I', { noremap = true, silent = true
 -- Pane navigation
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-n>', '<cmd>TmuxNavigateDown<cr>', { noremap = true, desc = 'Move to pane up' })
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-e>', '<cmd>TmuxNavigateUp<cr>', { noremap = true, desc = 'Move to pane down' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-h>', '<cmd>TmuxNavigateLeft<cr>', { noremap = true, desc = 'Move to pane left' })
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-i>', '<cmd>TmuxNavigateRight<cr>', { noremap = true, desc = 'Move to pane right' })
 
 -- ############################################################################

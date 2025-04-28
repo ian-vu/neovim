@@ -1,7 +1,13 @@
 return {
   {
-    'folke/persistence.nvim',
-    event = 'BufReadPre', -- this will only start session saving when an actual file was opened
+    'pysan3/autosession.nvim', -- restore previous session
+    event = { 'VeryLazy' }, -- OPTIONAL
+    -- lazy = false,                          -- If you do not want to lazy load.
+    dependencies = { 'mhinz/vim-startify' }, -- OPTIONAL: Used for `:AutoSessionGlobal`
+    opts = {
+      autosave_on_quit = true,
+      warn_on_setup = true,
+    },
   },
   {
     'nvimdev/dashboard-nvim',
@@ -48,7 +54,7 @@ return {
           header = vim.split(logo, '\n'),
           -- stylua: ignore
           center = {
-            { action = 'lua require("persistence").load()', desc = " Restore Session", icon = " ", key = "s"},
+            { action = 'AutoSessionRestore',                desc = " Restore session", icon = " ", key = "s"},
             { action = 'lua require("oil").open()',         desc = " Explorer",        icon = "󱏒 ", key = "e"},
             { action = "ene | startinsert",                 desc = " New file",        icon = " ", key = "n"},
             { action = "ObsidianToday",                     desc = " Today's note",    icon = "󰇈 ", key = "t"},

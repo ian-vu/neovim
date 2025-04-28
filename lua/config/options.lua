@@ -9,6 +9,7 @@ vim.g.have_nerd_font = true
 
 -- Line numbers to be relative
 vim.opt.relativenumber = true
+vim.opt.number = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -62,3 +63,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Global statusline
 vim.opt.laststatus = 3
+
+-- Hide bottom command line
+vim.opt.cmdheight = 2
