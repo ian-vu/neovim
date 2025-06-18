@@ -19,8 +19,10 @@ utils.plugin.setup()
 require('lazy').setup {
   -- Based on the module path it will import `lua/<path>/*.lua`
   -- NOTE: it won't recusively import nested modules
-  { import = 'plugins' },
-  { import = 'plugins.languages' },
+  spec = {
+    { import = 'plugins' },
+    { import = 'plugins.languages' },
+  },
   change_detection = { enabled = false }, -- automatically detect changes in your configuration
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
